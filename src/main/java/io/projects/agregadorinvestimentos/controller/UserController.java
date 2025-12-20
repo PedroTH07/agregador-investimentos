@@ -36,4 +36,17 @@ public class UserController {
         var users = service.listUsers();
         return ResponseEntity.ok(users);
     }
+
+    @PutMapping("/{userId}")
+    public ResponseEntity<Void> updateUser(@PathVariable("userId") String userId,
+                                           @RequestBody UpdateUserDto body) {
+        service.updateUser(userId, body);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("userId") String userId) {
+        service.deleteUserById(userId);
+        return ResponseEntity.noContent().build();
+    }
 }
