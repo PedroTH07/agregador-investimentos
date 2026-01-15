@@ -1,7 +1,7 @@
 package io.projects.agregadorinvestimentos.service;
 
-import io.projects.agregadorinvestimentos.controller.CreateUserDto;
-import io.projects.agregadorinvestimentos.controller.UpdateUserDto;
+import io.projects.agregadorinvestimentos.controller.dto.CreateUserDto;
+import io.projects.agregadorinvestimentos.controller.dto.UpdateUserDto;
 import io.projects.agregadorinvestimentos.entity.User;
 import io.projects.agregadorinvestimentos.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
