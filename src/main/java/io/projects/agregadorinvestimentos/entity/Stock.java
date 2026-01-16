@@ -24,11 +24,11 @@ public class Stock {
         this.description = description;
     }
 
-    public String getTickets() {
+    public String getTicker() {
         return ticker;
     }
 
-    public void setTickets(String tickets) {
+    public void setTicker(String tickets) {
         this.ticker = tickets;
     }
 

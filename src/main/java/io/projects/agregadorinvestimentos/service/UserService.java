@@ -2,6 +2,7 @@ package io.projects.agregadorinvestimentos.service;
 
 import io.projects.agregadorinvestimentos.controller.dto.CreateAccountDto;
 import io.projects.agregadorinvestimentos.controller.dto.CreateUserDto;
+import io.projects.agregadorinvestimentos.controller.dto.ResponseAccountDto;
 import io.projects.agregadorinvestimentos.controller.dto.UpdateUserDto;
 import io.projects.agregadorinvestimentos.entity.Account;
 import io.projects.agregadorinvestimentos.entity.BillingAddress;
@@ -96,5 +97,17 @@ public class UserService {
                 data.number()
         );
         billingAddressRepository.save(billingAddress);
+    }
+
+    public List<ResponseAccountDto> listAccounts(String userId) {
+        var user = userRepository.findById(UUID.fromString(userId))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+
+        return user.getAccounts()
+                .stream()
+                .map(ac -> new ResponseAccountDto(
+                        ac.getAccountId().toString(),
+                        ac.getDescription()))
+                .toList();
     }
 }

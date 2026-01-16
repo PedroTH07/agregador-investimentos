@@ -2,6 +2,7 @@ package io.projects.agregadorinvestimentos.controller;
 
 import io.projects.agregadorinvestimentos.controller.dto.CreateAccountDto;
 import io.projects.agregadorinvestimentos.controller.dto.CreateUserDto;
+import io.projects.agregadorinvestimentos.controller.dto.ResponseAccountDto;
 import io.projects.agregadorinvestimentos.controller.dto.UpdateUserDto;
 import io.projects.agregadorinvestimentos.entity.User;
 import io.projects.agregadorinvestimentos.service.UserService;
@@ -58,5 +59,11 @@ public class UserController {
                                                   @RequestBody CreateAccountDto data) {
         service.createAccount(userId, data);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{userId}/accounts")
+    public ResponseEntity<List<ResponseAccountDto>> listAccounts(@PathVariable("userId") String userId) {
+        var accounts = service.listAccounts(userId);
+        return ResponseEntity.ok(accounts);
     }
 }
