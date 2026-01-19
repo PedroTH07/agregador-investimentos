@@ -1,0 +1,18 @@
+package io.projects.agregadorinvestimentos.client;
+
+import io.projects.agregadorinvestimentos.client.dto.BrapiResponseDto;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@FeignClient(
+        name = "BrapiClient",
+        url = "https://brapi.dev"
+)
+public interface BrapiClient {
+
+    @GetMapping(value = "/api/quote/{stockId}")
+    BrapiResponseDto getQuote(@PathVariable("stockId") String stockId,
+                              @RequestParam("token") String token);
+}
