@@ -11,6 +11,20 @@ Este projeto consiste em uma API de um agregador de investimentos feito a partir
 - H2DataBase
 - OpenFeign
 
-## ☕ Como rodar com Java
-### ⚙️ Requisitos
+## 🚀 Como rodar com Java
+### 📦 Pré requisitos
+
 - Java 21 (JDK ou JRE)
+
+### 🛠️ Build
+ 
+1. clone o repositório 
+'''bash
+git clone https://github.com/PedroTH07/<repositorio>.git
+cd agregador-investimentos
+'''
+
+2. rode usando o maven ou o maven wrapper
+'''bash
+./mvnw spring-boot:run
+'''
