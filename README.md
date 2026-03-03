@@ -19,12 +19,12 @@ Este projeto consiste em uma API de um agregador de investimentos feito a partir
 ### 🛠️ Build
  
 1. clone o repositório 
-'''bash
+'''
 git clone https://github.com/PedroTH07/<repositorio>.git
 cd agregador-investimentos
 '''
 
 2. rode usando o maven ou o maven wrapper
-'''bash
+'''
 ./mvnw spring-boot:run
 '''
