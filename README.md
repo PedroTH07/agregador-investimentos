@@ -15,16 +15,32 @@ Este projeto consiste em uma API de um agregador de investimentos feito a partir
 ### 📦 Pré requisitos
 
 - Java 21 (JDK ou JRE)
+- ou docker
 
 ### 🛠️ Build
  
 1. clone o repositório 
 ```bash
-git clone https://github.com/PedroTH07/<repositorio>.git
+git clone https://github.com/PedroTH07/agregador-investimentos.git
 cd agregador-investimentos
 ```
 
 2. rode usando o maven ou o maven wrapper
 ```
 ./mvnw spring-boot:run
+```
+
+## 🐳 Rodar com Docker
+
+### 🛠️ Build
+ 
+1. clone o repositório 
+```bash
+git clone https://github.com/PedroTH07/agregador-investimentos.git
+cd agregador-investimentos
+```
+
+2. Faça o build e rode a imagem docker
+```
+docker compose up --build -d
 ```
